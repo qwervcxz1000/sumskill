@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--
+
+//-->
+<html lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" id="jquery-js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+	<script src="js/garlic.js" id="jquery-js"></script>
+	<title>ピクトマンサースキル回し</title>
+	<style>
+		main > .container {
+			padding: 54px 0 0;
+		}
+		.hb {
+			height: 38px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark p-1">
+			<span class="navbar-brand">ピクトマンサースキル回し</span>
+		</nav>
+	</header>
+	<main role="main" class="flex-shrink-0">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-3">
+
+					<fieldset style="border: 1px solid #000000; padding: 3px; text-align:center;">
+						<legend>攻撃技</legend>
+						<img src="img/e25904d9d00a0c1067e479ea752557aaec6fc30d.png" class="hb" onclick="push_skilllist('0');">
+						<img src="img/07406a981daf5e92fa645d070a97d8dc87e68a78.png" class="hb" onclick="push_skilllist('1');">
+						<img src="img/2cf03c27a9e09631ea594dea8b064cf4f9aa48be.png" class="hb" onclick="push_skilllist('2');">
+						<img src="img/5d8eefda835c959562af7d1fe12b229cedcca409.png" class="hb" onclick="push_skilllist('3');">
+						<img src="img/5627109a7394cce83a4085e16b4448a7d0262525.png" class="hb" onclick="push_skilllist('8');">
+
+						<div style="height:5px;"></div>
+
+						<img src="img/4a31c08d79867d5b332f98f8616bb06b9088daf0.png" class="hb" onclick="push_skilllist('4');">
+						<img src="img/8f7552113b38a8e6b3debb5ca900fbcd2bc3d0fb.png" class="hb" onclick="push_skilllist('5');">
+						<img src="img/f6f648fbed76b3d0b99e4127e8e9024234b6fb97.png" class="hb" onclick="push_skilllist('6');">
+						<img src="img/b6e90d61c6e71d968943043d62ddb5e1a9e6d7f3.png" class="hb" onclick="push_skilllist('7');">
+						<img src="img/5611f2fd77f2a770574f207216a66a12629a7526.png" class="hb" onclick="push_skilllist('9');">
+
+						<div style="height:5px;"></div>
+
+						<img src="img/a7bc8c6fb62a9d9666ef56e064ac6624474520c4.png" class="hb" onclick="push_skilllist('12');">
+						<img src="img/bc20c2aa10ac1db0fae2452b5c3cd41e2b9c2eda.png" class="hb" onclick="push_skilllist('13');">
+						<img src="img/5d8842fd05fef2d1c4f940bd5a7b35137bdba502.png" class="hb" onclick="push_skilllist('14');">
+						<img src="img/5611f2fd77f2a770574f207216a66a12629a7526.png" class="hb"  style="filter: grayscale(100%);" onclick="push_skilllist('10');">
+
+						<div style="height:5px;"></div>
+
+						<img src="img/5f09a63e115cb331f60826a258ba7d2cf51adf3f.png" class="hb" onclick="push_skilllist('15');">
+						<img src="img/900e2d32cfb03084ddf48bc8120763ad623f5540.png" class="hb" onclick="push_skilllist('16');">
+						<img src="img/6463351c3b4bef69baddc35e1c6d93a247daa923.png" class="hb" onclick="push_skilllist('17');">
+
+						<div style="height:5px;"></div>
+
+						<img src="img/bd61923ae5b677d8d93e57b962b23511d0f4396c.png" class="hb" onclick="push_skilllist('32');">
+						<img src="img/10803efae25f689fa66fe9ddedce3a95390e80c5.png" class="hb" onclick="push_skilllist('33');">
+						<img src="img/2405c837c6e42b5e05b84f9e10b30ef2eb6224e0.png" class="hb" onclick="push_skilllist('34');">
+
+					</fieldset>
+					<fieldset style="border: 1px solid #000000; padding: 10px; text-align:center;">
+						<legend>アビリティ</legend>
+						<img src="img/346a632a64591ed1e61406c1a85357112ae98a80.png" class="hb" onclick="push_skilllist('11');">
+						<img src="img/839afb2d992cdfd4588764299d02f5acd46d8765.png" class="hb" onclick="push_skilllist('20');">
+						<img src="img/78640b1974c2e3ac862c3e94b6cf0715c2a53705.png" class="hb" onclick="push_skilllist('21');">
+						<img src="img/e7eb51e71ca43854e55e520c860658d166e4b266.png" class="hb" onclick="push_skilllist('22');">
+						<img src="img/a7397b9f417ac2daf98e9f72b38e30768ec3b1cf.png" class="hb" onclick="push_skilllist('23');">
+
+						<div style="height:5px;"></div>
+
+						<img src="img/67d1a8e6464d65e94696ab65d1b0ba85e7501a91.png" class="hb" onclick="push_skilllist('18');">
+						<img src="img/cfe33f3c8faa98ade9f3f2fa13e4fbb1aa0cb3e3.png" class="hb" onclick="push_skilllist('19');">
+						<img src="img/83dc200badfab99ff0f550da3b13737e82dfa118.png" class="hb" onclick="push_skilllist('30');">
+						<img src="img/cafa13f63003b860d9edc8e67aa095fed5501a79.png" class="hb" onclick="push_skilllist('31');">
+
+						<div style="height:5px;"></div>
+
+					</fieldset>
+					<fieldset style="border: 1px solid #000000; padding: 10px; text-align:center;">
+						<legend>お絵かき</legend>
+						<img src="img/39158442095659217fb08bed59c45b2caf4ae7c2.png" class="hb" onclick="push_skilllist('24');">
+						<img src="img/9ccb0df55e15663f80866bd12936553cef27e1f8.png" class="hb" onclick="push_skilllist('25');">
+						<img src="img/34cd074b3bd5cc9036d2598ae899aed5e77e6db3.png" class="hb" onclick="push_skilllist('28');">
+						<img src="img/96814a40791c36cc4eff5e82300e1fb851a4515e.png" class="hb" onclick="push_skilllist('29');">
+
+						<div style="height:5px;"></div>
+
+						<img src="img/3c48a4050ea4386ef17063dbc841e75327a8d29e.png" class="hb" onclick="push_skilllist('26');">
+						<img src="img/39ff3bff7a4857c386313552edd236755358526a.png" class="hb" onclick="push_skilllist('27');">
+					</fieldset>
+					<div style="height:5px;"></div>
+
+
+				</div>
+				<div class="col-9" style="height: 450px;">
+					<form id="settings">
+						<p>敵の数：
+							<select id="enemy_num">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+							　GCD：
+							<select id="gcd_mode">
+								<option value="1">通常2.48</option>
+								<option value="2">スカイ中</option>
+							</select>
+						</p>
+					</form>
+					<table id="skill_table" class="table table-hover table-sm" style="table-layout: fixed;">
+						<tbody id="sort-table">
+						<tr id="table23"><td style="width:40px;"></td><td style="width:250px;">スキル名</td><td style="width:120px;">Hit</td><td style="width:120px;">威力</td><td style="width:120px;">GCD</td><td style="width:120px;">威力/s</td><td style="width:40px;"></td></tr>
+						</tbody>
+					</table>
+					<p>威力：<span id="dmg">0</span> | GCD：<span id="gcd">0</span> | 威力/s：<span id="dps">0</span></p>
+				</div>
+
+
+
+				<script>
+					var table_num = 0;
+					var enemy = 1;
+					var dmg = 0;
+					var gcd = 0;
+					var gcd_mode = 1;
+					var dps = 0;
+
+					$("#settings").on('change',function () {
+						enemy = $("#enemy_num").val();
+						gcd_mode = $("#gcd_mode").val();
+					})
+
+					// html要素を取得をしてSortableJSに設定します
+					const sortElement = document.getElementById('sort-table');
+					Sortable.create(sortElement);
+
+					function push_skilllist(skil_list) {
+						table_num += 1;
+
+						enemy_dmg = skill_data[skil_list].dmg + skill_data[skil_list].dmg * (enemy-1) * skill_data[skil_list].mul;
+						dmg = enemy_dmg + Number($('#dmg').html());
+
+						if (gcd_mode == 1) {
+							skill_gcd = skill_data[skil_list].gcd;
+						} else {
+							skill_gcd = skill_data[skil_list].gcd2;
+						}
+						if (skill_gcd == 0) {
+							skill_dps = "";
+						} else {
+							skill_dps = Math.round((enemy_dmg / skill_gcd)*1000)/1000;
+						}
+
+						$('#skill_table').append('<tr id="table' + table_num + '"><td><img src="img/' + skill_data[skil_list].img +'" style="height: 27px;"></td><td>' + skill_data[skil_list].name
+							 +'</td><td>' + enemy + '</td><td id="dmg' + table_num +'">'+ enemy_dmg +'</td><td id="gcd' + table_num +'">' + skill_gcd 
+							 	+ '</td><td>' + skill_dps + '</td><td><button class="btn btn-outline-primary btn-sm" onclick="t_del(' + table_num + ');">×</button></i></td></tr>');
+
+						$('#dmg').html(dmg);
+
+						gcd = Math.round(skill_data[skil_list].gcd*100 + Number($('#gcd').html()*100))/100;
+						$('#gcd').html(gcd);
+
+						$('#dps').html(Math.round(dmg / gcd*1000)/1000);
+
+					}
+					
+					function t_del(del_num) {
+						dmg = Number($('#dmg').html()) - Number($('#dmg'+del_num).html())
+						$('#dmg').html(dmg);
+
+						gcd = Math.round(Number($('#gcd').html())*100 - Number($('#gcd'+del_num).html())*100)/100;
+						$('#gcd').html(gcd);
+
+						if (dmg == 0 && gcd == 0) {
+							$('#dps').html("0");
+						} else {
+							$('#dps').html(Math.round(dmg / gcd*1000)/1000);
+						}
+						$('#table'+del_num).remove();
+					}
+					
+
+
+				var skill_data = [
+					{"name" : "レッドファイア"              , "img" : "e25904d9d00a0c1067e479ea752557aaec6fc30d.png" , "dmg" : 440  , "gcd" : 2.48, "gcd2" : 1.86 , "mul" : 0},//0
+					{"name" : "グリーンエアロ"              , "img" : "07406a981daf5e92fa645d070a97d8dc87e68a78.png" , "dmg" : 480  , "gcd" : 2.48, "gcd2" : 1.86 , "mul" : 0},
+					{"name" : "ブルーウォータ"              , "img" : "2cf03c27a9e09631ea594dea8b064cf4f9aa48be.png" , "dmg" : 520  , "gcd" : 2.48, "gcd2" : 1.86 , "mul" : 0},
+					{"name" : "ホワイトホーリー"            , "img" : "5d8eefda835c959562af7d1fe12b229cedcca409.png" , "dmg" : 520  , "gcd" : 2.48, "gcd2" : 1.86 , "mul" : 0.4},
+					{"name" : "シアンブリザド"              , "img" : "4a31c08d79867d5b332f98f8616bb06b9088daf0.png" , "dmg" : 800  , "gcd" : 3.28, "gcd2" : 2.46 , "mul" : 0},
+					{"name" : "イエローストーン"            , "img" : "8f7552113b38a8e6b3debb5ca900fbcd2bc3d0fb.png" , "dmg" : 840  , "gcd" : 3.28, "gcd2" : 2.46 , "mul" : 0},
+					{"name" : "マゼンタサンダー"            , "img" : "f6f648fbed76b3d0b99e4127e8e9024234b6fb97.png" , "dmg" : 880  , "gcd" : 3.28, "gcd2" : 2.46 , "mul" : 0},
+					{"name" : "ブラックコメット"            , "img" : "b6e90d61c6e71d968943043d62ddb5e1a9e6d7f3.png" , "dmg" : 880  , "gcd" : 3.28, "gcd2" : 2.46 , "mul" : 0.4},//7
+
+					{"name" : "スタープリズム"              , "img" : "5627109a7394cce83a4085e16b4448a7d0262525.png" , "dmg" : 1400 , "gcd" : 2.48, "gcd2" : 1.86 , "mul" : 0.4},//8
+					{"name" : "レインボードリップ"          , "img" : "5611f2fd77f2a770574f207216a66a12629a7526.png" , "dmg" : 1000 , "gcd" : 2.47, "gcd2" : 2.47 , "mul" : 0.15},//9
+					{"name" : "レインボードリップ長"        , "img" : "5611f2fd77f2a770574f207216a66a12629a7526.png" , "dmg" : 1000 , "gcd" : 5.97, "gcd2" : 5.97   , "mul" : 0.15},//10
+
+					{"name" : "サブトラクティブパレット"    , "img" : "346a632a64591ed1e61406c1a85357112ae98a80.png" , "dmg" : 0    , "gcd" : 0   , "gcd2" : 0    , "mul" : 0},//11
+
+					{"name" : "レッドファイラ"              , "img" : "a7bc8c6fb62a9d9666ef56e064ac6624474520c4.png" , "dmg" : 120  , "gcd" : 2.48, "gcd2" : 1.86 , "mul" : 1},//12
+					{"name" : "グリーンエアロラ"            , "img" : "bc20c2aa10ac1db0fae2452b5c3cd41e2b9c2eda.png" , "dmg" : 140  , "gcd" : 2.48, "gcd2" : 1.86 , "mul" : 1},
+					{"name" : "ブルーウォタラ"              , "img" : "5d8842fd05fef2d1c4f940bd5a7b35137bdba502.png" , "dmg" : 160  , "gcd" : 2.48, "gcd2" : 1.86 , "mul" : 1},//14
+					{"name" : "シアンブリザラ"              , "img" : "5f09a63e115cb331f60826a258ba7d2cf51adf3f.png" , "dmg" : 240  , "gcd" : 3.28, "gcd2" : 2.46 , "mul" : 1},//15
+					{"name" : "イエローストンラ"            , "img" : "900e2d32cfb03084ddf48bc8120763ad623f5540.png" , "dmg" : 260  , "gcd" : 3.28, "gcd2" : 2.46 , "mul" : 1},
+					{"name" : "マゼンタサンダラ"            , "img" : "6463351c3b4bef69baddc35e1c6d93a247daa923.png" , "dmg" : 280  , "gcd" : 3.28, "gcd2" : 2.46 , "mul" : 1},//17
+
+					{"name" : "モーグリストリーム"          , "img" : "67d1a8e6464d65e94696ab65d1b0ba85e7501a91.png" , "dmg" : 1300 , "gcd" : 0   , "gcd2" : 0    , "mul" : 0.4},
+					{"name" : "マディーンレトリビューション", "img" : "cfe33f3c8faa98ade9f3f2fa13e4fbb1aa0cb3e3.png" , "dmg" : 1400 , "gcd" : 0   , "gcd2" : 0    , "mul" : 0.4},
+
+					{"name" : "イマジンポンポン"            , "img" : "839afb2d992cdfd4588764299d02f5acd46d8765.png" , "dmg" : 1100 , "gcd" : 0   , "gcd2" : 0    , "mul" : 0.4},
+					{"name" : "イマジンウィング"            , "img" : "78640b1974c2e3ac862c3e94b6cf0715c2a53705.png" , "dmg" : 1100 , "gcd" : 0   , "gcd2" : 0    , "mul" : 0.4},
+					{"name" : "イマジンクロー"              , "img" : "e7eb51e71ca43854e55e520c860658d166e4b266.png" , "dmg" : 1100 , "gcd" : 0   , "gcd2" : 0    , "mul" : 0.4},
+					{"name" : "イマジンファング"            , "img" : "a7397b9f417ac2daf98e9f72b38e30768ec3b1cf.png" , "dmg" : 1100 , "gcd" : 0   , "gcd2" : 0    , "mul" : 0.4},//23
+
+					{"name" : "ピクトポンポン"              , "img" : "39158442095659217fb08bed59c45b2caf4ae7c2.png" , "dmg" : 0    , "gcd" : 4   , "gcd2" : 4    , "mul" : 0},//24
+					{"name" : "ピクトウィング"              , "img" : "9ccb0df55e15663f80866bd12936553cef27e1f8.png" , "dmg" : 0    , "gcd" : 4   , "gcd2" : 4    , "mul" : 0},
+					{"name" : "ピクトハンマー"              , "img" : "3c48a4050ea4386ef17063dbc841e75327a8d29e.png" , "dmg" : 0    , "gcd" : 4   , "gcd2" : 4    , "mul" : 0},
+					{"name" : "ピクトスカイ"                , "img" : "39ff3bff7a4857c386313552edd236755358526a.png" , "dmg" : 0    , "gcd" : 4   , "gcd2" : 4    , "mul" : 0},
+					{"name" : "ピクトクロー"                , "img" : "34cd074b3bd5cc9036d2598ae899aed5e77e6db3.png" , "dmg" : 0    , "gcd" : 4   , "gcd2" : 4    , "mul" : 0},//28
+					{"name" : "ピクトファング"              , "img" : "96814a40791c36cc4eff5e82300e1fb851a4515e.png" , "dmg" : 0    , "gcd" : 4   , "gcd2" : 4    , "mul" : 0},//29
+
+					{"name" : "イマジンハンマー"            , "img" : "83dc200badfab99ff0f550da3b13737e82dfa118.png" , "dmg" : 0    , "gcd" : 0   , "gcd2" : 0    , "mul" : 0},//30
+					{"name" : "イマジンスカイ"              , "img" : "cafa13f63003b860d9edc8e67aa095fed5501a79.png" , "dmg" : 0    , "gcd" : 0   , "gcd2" : 0    , "mul" : 0},
+
+					{"name" : "ハンマースタンプ"            , "img" : "bd61923ae5b677d8d93e57b962b23511d0f4396c.png" , "dmg" : 560*1.8 , "gcd" : 2.48   , "gcd2" : 2.48    , "mul" : 0.4},//32
+					{"name" : "ハンマーブラッシュ"          , "img" : "10803efae25f689fa66fe9ddedce3a95390e80c5.png" , "dmg" : 620*1.8 , "gcd" : 2.48   , "gcd2" : 2.48    , "mul" : 0.4},//33
+					{"name" : "ハンマーポリッシュ"          , "img" : "2405c837c6e42b5e05b84f9e10b30ef2eb6224e0.png" , "dmg" : 680*1.8 , "gcd" : 2.48   , "gcd2" : 2.48    , "mul" : 0.4},//34
+
+				];
+				</script>
+
+			</div>
+		</div>
+	</main>
+	<footer class="footer py-3">
+	</footer>
+</body>
+</html>
