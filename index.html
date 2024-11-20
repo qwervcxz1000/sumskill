@@ -175,7 +175,7 @@
 
 						$('#dmg').html(dmg);
 
-						gcd = Math.round(skill_data[skil_list].gcd*100 + Number($('#gcd').html()*100))/100;
+						gcd = Math.round(skill_gcd*100 + Number($('#gcd').html()*100))/100;
 						$('#gcd').html(gcd);
 
 						$('#dps').html(Math.round(dmg / gcd*1000)/1000);
