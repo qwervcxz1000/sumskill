@@ -75,27 +75,28 @@
 						<img src="img/f25f4c81570c889872295e4ba99496ee6bf3fc89.png" class="hb" onclick="push_skilllist('24');">
 						<img src="img/87c16672ddea00204d4c0489b5417166cdb2546a.png" class="hb" onclick="push_skilllist('25');">
 						<img src="img/6a54b05a1f6bd144d28149045f1f9cc61f86daf3.png" class="hb" onclick="push_skilllist('26');">
-						<img src="img/876d6589f594c3f74d7d2834d297f18da7809199.png" class="hb" onclick="push_skilllist('27');">
+						<img src="img/6a54b05a1f6bd144d28149045f1f9cc61f86daf3.png" class="hb" onclick="push_skilllist('27');" style="filter: grayscale(100%);">
+						<img src="img/876d6589f594c3f74d7d2834d297f18da7809199.png" class="hb" onclick="push_skilllist('28');">
 
 						<div style="height:5px;"></div>
 
-						<img src="img/e49b3a55b75a637cb0e6e794d588b2ba4886c742.png" class="hb" onclick="push_skilllist('28');">
-						<img src="img/3c739e3604ba2d045b691a46c0dbef1a658951f3.png" class="hb" onclick="push_skilllist('29');">
-						<img src="img/7ec3b0243e57959d38e7bcbfaaab4fe0bbf8972b.png" class="hb" onclick="push_skilllist('30');">
-						<img src="img/a63bb4e29d20c938e1b68ea0dc0ab64c3a8a9fdf.png" class="hb" onclick="push_skilllist('31');">
-						<img src="img/aff103d032034722b3a4063ad749eb2bb85793aa.png" class="hb" onclick="push_skilllist('32');">
+						<img src="img/e49b3a55b75a637cb0e6e794d588b2ba4886c742.png" class="hb" onclick="push_skilllist('29');">
+						<img src="img/3c739e3604ba2d045b691a46c0dbef1a658951f3.png" class="hb" onclick="push_skilllist('30');">
+						<img src="img/7ec3b0243e57959d38e7bcbfaaab4fe0bbf8972b.png" class="hb" onclick="push_skilllist('31');">
+						<img src="img/a63bb4e29d20c938e1b68ea0dc0ab64c3a8a9fdf.png" class="hb" onclick="push_skilllist('32');">
+						<img src="img/aff103d032034722b3a4063ad749eb2bb85793aa.png" class="hb" onclick="push_skilllist('33');">
 
 					</fieldset>
 					<fieldset style="border: 1px solid #000000; padding: 10px; text-align:center;">
 						<legend>アビリティ</legend>
-						<img src="img/92ea9227a8a09c62eb53852e2c26c0d6763a35c2.png" class="hb" onclick="push_skilllist('33');">
-						<img src="img/f224b169e6f0f4b35b361e5c6666293e09a1f0ac.png" class="hb" onclick="push_skilllist('34');">
-						<img src="img/f9335b8757ce19d93307eb4686a8271552de608d.png" class="hb" onclick="push_skilllist('35');">
+						<img src="img/92ea9227a8a09c62eb53852e2c26c0d6763a35c2.png" class="hb" onclick="push_skilllist('34');">
+						<img src="img/f224b169e6f0f4b35b361e5c6666293e09a1f0ac.png" class="hb" onclick="push_skilllist('35');">
+						<img src="img/f9335b8757ce19d93307eb4686a8271552de608d.png" class="hb" onclick="push_skilllist('36');">
 
 						<div style="height:5px;"></div>
 
-						<img src="img/6c4b1ae3c69201feb415963f374cd3449a4ad7db.png" class="hb" onclick="push_skilllist('36');">
-						<img src="img/b1edfc3a4d1b47e1df840e26e0969529070fed58.png" class="hb" onclick="push_skilllist('37');">
+						<img src="img/6c4b1ae3c69201feb415963f374cd3449a4ad7db.png" class="hb" onclick="push_skilllist('37');">
+						<img src="img/b1edfc3a4d1b47e1df840e26e0969529070fed58.png" class="hb" onclick="push_skilllist('38');">
 
 						<div style="height:5px;"></div>
 
@@ -126,8 +127,10 @@
 						</p>
 					</form>
 					<table id="skill_table" class="table table-hover table-sm" style="table-layout: fixed;">
+						<thead>
+							<tr id="table23"><td style="width:40px;"></td><td style="width:250px;">スキル名</td><td style="width:120px;">Hit</td><td style="width:120px;">威力</td><td style="width:120px;">GCD</td><td style="width:120px;">威力/s</td><td style="width:40px;"></td></tr>
+						</thead>
 						<tbody id="sort-table">
-						<tr id="table23"><td style="width:40px;"></td><td style="width:250px;">スキル名</td><td style="width:120px;">Hit</td><td style="width:120px;">威力</td><td style="width:120px;">GCD</td><td style="width:120px;">威力/s</td><td style="width:40px;"></td></tr>
 						</tbody>
 					</table>
 					<p>威力：<span id="dmg">0</span> | GCD：<span id="gcd">0</span> | 威力/s：<span id="dps">0</span></p>
@@ -155,7 +158,14 @@
 					function push_skilllist(skil_list) {
 						table_num += 1;
 
-						enemy_dmg = skill_data[skil_list].dmg + skill_data[skil_list].dmg * (enemy-1) * skill_data[skil_list].mul;
+						if (skil_list == 26) {
+							// スリップストリーム用例外設定
+							enemy_dmg = skill_data[skil_list].dmg + skill_data[skil_list].dmg * (enemy-1) * skill_data[skil_list].mul + 30 * 5 * enemy;
+						} else if (skil_list == 27) {
+							enemy_dmg = skill_data[skil_list].dmg + skill_data[skil_list].dmg * (enemy-1) * skill_data[skil_list].mul + 30 * 1 * enemy;
+						} else {
+							enemy_dmg = skill_data[skil_list].dmg + skill_data[skil_list].dmg * (enemy-1) * skill_data[skil_list].mul;
+						}
 						dmg = enemy_dmg + Number($('#dmg').html());
 
 						if (gcd_mode == 1) {
@@ -173,6 +183,7 @@
 							 +'</td><td>' + enemy + '</td><td id="dmg' + table_num +'">'+ enemy_dmg +'</td><td id="gcd' + table_num +'">' + skill_gcd 
 							 	+ '</td><td>' + skill_dps + '</td><td><button class="btn btn-outline-primary btn-sm" onclick="t_del(' + table_num + ');">×</button></i></td></tr>');
 
+						dmg = Math.round(dmg*1000)/1000;
 						$('#dmg').html(dmg);
 
 						gcd = Math.round(skill_gcd*100 + Number($('#gcd').html()*100))/100;
@@ -184,6 +195,7 @@
 					
 					function t_del(del_num) {
 						dmg = Number($('#dmg').html()) - Number($('#dmg'+del_num).html())
+						dmg = Math.round(dmg*1000)/1000;
 						$('#dmg').html(dmg);
 
 						gcd = Math.round(Number($('#gcd').html())*100 - Number($('#gcd'+del_num).html())*100)/100;
@@ -205,40 +217,41 @@
 					{"name" : "トライディザスター"              , "img" : "20e1e40922c159401231154ab0cc94c789b1f58f.png" , "dmg" : 120  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 1},
 
 					{"name" : "サモン・ソルバハムート"              , "img" : "8b65e3df95387470664286d1e2a0f71dd29b8f77.png" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "光芒"              , "img" : "7ea77f0af91e55be0b619e4dc72e20c5ba56f516.png" , "dmg" : 160*0.8  , "gcd" : 0, "gcd2" : 0 , "mul" : 0},
+					{"name" : "光芒"              , "img" : "7ea77f0af91e55be0b619e4dc72e20c5ba56f516.png" , "dmg" : 160*0.833  , "gcd" : 0, "gcd2" : 0 , "mul" : 0},
 					{"name" : "アンブラルインパルス"              , "img" : "097755a6dc321ca146451fbb0e5c42dca4d9dd02.png" , "dmg" : 620  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
 					{"name" : "ソルフレア"              , "img" : "ea98821592c274277d2472f4eb33e014c66a751f.png" , "dmg" : 800  , "gcd" : 0, "gcd2" : 0 , "mul" : 0.4},
-					{"name" : "エクソダス"              , "img" : "4deaaa9815c4b1bd5fc52e76019d9192342568b9.png" , "dmg" : 1400*0.8  , "gcd" : 0, "gcd2" : 0 , "mul" : 0.4},
+					{"name" : "エクソダス"              , "img" : "4deaaa9815c4b1bd5fc52e76019d9192342568b9.png" , "dmg" : 1400*0.833  , "gcd" : 0, "gcd2" : 0 , "mul" : 0.4},
 					{"name" : "アンブラルフレア"              , "img" : "e20b0b341a670598c6af9548925d4da35c2e4365.png" , "dmg" : 280  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 1},
 
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
+					{"name" : "サモン・バハムート"              , "img" : "88e476ec7f35cfb0f94120dc2ef1b7ed0c00768a.png" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
+					{"name" : "ウィルムウェーブ"              , "img" : "0e7bcb6dd7b20399f831c58338994005b10da6b3.png" , "dmg" : 150*0.833  , "gcd" : 0, "gcd2" : 0 , "mul" : 0},
+					{"name" : "アストラルインパルス"              , "img" : "2ba7ab41cd2f8dac96ba0c89426eebff963d6be0.png" , "dmg" : 500  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
+					{"name" : "デスフレア"              , "img" : "e88a1de4bbb8cdaa4c08ef5717797c2872bb42dd.png" , "dmg" : 500  , "gcd" : 0, "gcd2" : 0 , "mul" : 0.4},
+					{"name" : "アク・モーン"              , "img" : "7841102eeddcd359b9bc0af66a8c51aee6c7b258.png" , "dmg" : 1300*0.833  , "gcd" : 0, "gcd2" : 0 , "mul" : 0.4},
+					{"name" : "アストラルフレア"              , "img" : "41380367e3ff56dfc723ac049dbcacd00ac5c6f8.png" , "dmg" : 180  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 1},
 
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
+					{"name" : "サモン・フェニックス"              , "img" : "e38e769e9f268f4dcc345b25d310cd53d10d4795.png" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
+					{"name" : "火焔"              , "img" : "865ff61841e27dc0ede5742b0109c45b672c2ef2.png" , "dmg" : 150*0.833  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
+					{"name" : "霊泉の炎"              , "img" : "1b50beab981774f701d16ac61674bfc01747f38b.png" , "dmg" : 580  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
+					{"name" : "リヴァレーション"              , "img" : "596917791c140eef84754e4488df04bfb7aabf87.png" , "dmg" : 1300*0.833  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0.4},
+					{"name" : "煉獄の炎"              , "img" : "daebb0133d31dbdcc989ecf9fd04ef3acf040cba.png" , "dmg" : 240  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 1},
 
-					{"name" : "サモン・タイタンII"              , "img" : "d5e3edcb915673621b1ccb51774abf494eba6b5e.png" , "dmg" : 800*0.8  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
+					{"name" : "サモン・タイタンII"              , "img" : "d5e3edcb915673621b1ccb51774abf494eba6b5e.png" , "dmg" : 800*0.833  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0.4},
 					{"name" : "トパーズ・リチュアル"              , "img" : "4c4900529cf628e2f3fda4134c996741f8b465c3.png" , "dmg" : 340  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
 					{"name" : "マウンテンバスター"              , "img" : "735d3aabed75539866193ca97b356367f818821f.png" , "dmg" : 160  , "gcd" :0, "gcd2" : 0 , "mul" : 0.3},
 					{"name" : "トパーズ・カタストロフィ"              , "img" : "8f6bc648e6b39fcdfdb5d747cc28ea98dd65b441.png" , "dmg" : 140  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 1},
 
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
+					{"name" : "サモン・ガルーダII"              , "img" : "f25f4c81570c889872295e4ba99496ee6bf3fc89.png" , "dmg" : 800*0.833  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0.4},
+					{"name" : "エメラルド・リチュアル"              , "img" : "87c16672ddea00204d4c0489b5417166cdb2546a.png" , "dmg" : 240  , "gcd" : 1.5, "gcd2" : 0 , "mul" : 0},
+					{"name" : "スリップストリーム5hit"              , "img" : "6a54b05a1f6bd144d28149045f1f9cc61f86daf3.png" , "dmg" : 490  , "gcd" : 3.48, "gcd2" : 0 , "mul" : 0.35}, //26
+					{"name" : "スリップストリーム1hit"              , "img" : "6a54b05a1f6bd144d28149045f1f9cc61f86daf3.png" , "dmg" : 490  , "gcd" : 3.48, "gcd2" : 0 , "mul" : 0.35}, //27
+					{"name" : "エメラルド・カタストロフィ"              , "img" : "876d6589f594c3f74d7d2834d297f18da7809199.png" , "dmg" : 100  , "gcd" : 1.5, "gcd2" : 0 , "mul" : 1},
 
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
-					{"name" : "レッドファイア"              , "img" : "" , "dmg" : 0  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0},
+					{"name" : "	サモン・イフリートII"              , "img" : "e49b3a55b75a637cb0e6e794d588b2ba4886c742.png" , "dmg" : 800*0.833  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0.4},
+					{"name" : "ルビー・リチュアル"              , "img" : "3c739e3604ba2d045b691a46c0dbef1a658951f3.png" , "dmg" : 540  , "gcd" : 2.98, "gcd2" : 0 , "mul" : 0},
+					{"name" : "クリムゾンサイクロン"              , "img" : "7ec3b0243e57959d38e7bcbfaaab4fe0bbf8972b.png" , "dmg" : 490  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0.35},
+					{"name" : "クリムゾンストライク"              , "img" : "a63bb4e29d20c938e1b68ea0dc0ab64c3a8a9fdf.png" , "dmg" : 490  , "gcd" : 2.48, "gcd2" : 0 , "mul" : 0.35},
+					{"name" : "ルビー・カタストロフィ"              , "img" : "aff103d032034722b3a4063ad749eb2bb85793aa.png" , "dmg" : 210  , "gcd" : 2.98, "gcd2" : 0 , "mul" : 1},
 
 					{"name" : "エナジードレイン"              , "img" : "92ea9227a8a09c62eb53852e2c26c0d6763a35c2.png" , "dmg" : 200  , "gcd" : 0, "gcd2" : 0 , "mul" : 0},
 					{"name" : "ミアズマノヴァ"              , "img" : "f224b169e6f0f4b35b361e5c6666293e09a1f0ac.png" , "dmg" : 440  , "gcd" : 0, "gcd2" : 0 , "mul" : 0},
