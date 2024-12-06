@@ -166,6 +166,7 @@
 						} else {
 							enemy_dmg = skill_data[skil_list].dmg + skill_data[skil_list].dmg * (enemy-1) * skill_data[skil_list].mul;
 						}
+						enemy_dmg = Math.round(enemy_dmg*1000)/1000;
 						dmg = enemy_dmg + Number($('#dmg').html());
 
 						if (gcd_mode == 1) {
