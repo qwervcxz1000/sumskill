@@ -106,7 +106,7 @@
 					<div style="height:5px;"></div>
 
 				</div>
-				<div class="col-9" style="height: 450px;">
+				<div class="col-9">
 					<form id="settings">
 						<p>敵の数：
 							<select id="enemy_num">
@@ -127,13 +127,15 @@
 							</select>
 						</p>
 					</form>
-					<table id="skill_table" class="table table-hover table-sm" style="table-layout: fixed;">
-						<thead>
-							<tr id="table23"><td style="width:40px;"></td><td style="width:250px;">スキル名</td><td style="width:120px;">Hit</td><td style="width:120px;">威力</td><td style="width:120px;">GCD</td><td style="width:120px;">威力/s</td><td style="width:40px;"></td></tr>
-						</thead>
-						<tbody id="sort-table">
-						</tbody>
-					</table>
+					<div style="overflow-y: scroll;height:500px;">
+						<table id="skill_table" class="table table-hover table-sm" style="table-layout: fixed;">
+							<thead>
+								<tr id="table23"><td style="width:40px;"></td><td style="width:250px;">スキル名</td><td style="width:120px;">Hit</td><td style="width:120px;">威力</td><td style="width:120px;">GCD</td><td style="width:120px;">威力/s</td><td style="width:40px;"></td></tr>
+							</thead>
+							<tbody id="sort-table">
+							</tbody>
+						</table>
+					</div>
 					<p>威力：<span id="dmg">0</span> | GCD：<span id="gcd">0</span> | 威力/s：<span id="dps">0</span></p>
 				</div>
 
